@@ -28,19 +28,19 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 
 # Background
-background = pygame.image.load('/home/bryan/PycharmProjects/SpaceInvaders/Spinvade/space.png')
+background = pygame.image.load("C:/Users/javab/OneDrive/Documents/spaceinvaderstuff/space.png")
 
 # Sound
-mixer.music.load("/home/bryan/PycharmProjects/SpaceInvaders/background.wav")
+mixer.music.load("C:/Users/javab/OneDrive/Documents/spaceinvaderstuff/background.wav")
 mixer.music.play(-1)
 
 # Caption and Icon
 pygame.display.set_caption("S p a c e  I n v a d e r")
-icon = pygame.image.load('/home/bryan/PycharmProjects/SpaceInvaders/Spinvade/solar-system.png')
+icon = pygame.image.load("C:/Users/javab/OneDrive/Documents/spaceinvaderstuff/solar-system.png")
 pygame.display.set_icon(icon)
 
 # Player
-playerImg = pygame.image.load('/home/bryan/PycharmProjects/SpaceInvaders/Spinvade/space-invaders.png')
+playerImg = pygame.image.load("C:/Users/javab/OneDrive/Documents/spaceinvaderstuff/space-invaders.png")
 playerX = 370
 playerY = 480
 playerX_change = 0
@@ -54,7 +54,7 @@ enemyY_change = []
 num_of_enemies = 6
 
 for i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('/home/bryan/PycharmProjects/SpaceInvaders/Spinvade/alien.png'))
+    enemyImg.append(pygame.image.load("C:/Users/javab/OneDrive/Documents/spaceinvaderstuff/alien.png"))
     enemyX.append(random.randint(0, 736))
     enemyY.append(random.randint(50, 150))
     enemyX_change.append(4)
@@ -65,7 +65,7 @@ for i in range(num_of_enemies):
 # Ready - You can't see the bullet on the screen
 # Fire - The bullet is currently moving
 
-bulletImg = pygame.image.load('/home/bryan/PycharmProjects/SpaceInvaders/Spinvade/bullet.png')
+bulletImg = pygame.image.load("C:/Users/javab/OneDrive/Documents/spaceinvaderstuff/bullet.png")
 bulletX = 0
 bulletY = 480
 bulletX_change = 0
@@ -137,7 +137,7 @@ while running:
                 playerX_change = 4
             if event.key == pygame.K_SPACE:
                 if bullet_state is "ready":
-                    bulletSound = mixer.Sound("/home/bryan/PycharmProjects/SpaceInvaders/laser.wav")
+                    bulletSound = mixer.Sound("C:/Users/javab/OneDrive/Documents/spaceinvaderstuff/laser.wav")
                     bulletSound.play()
                     # Get the current x cordinate of the spaceship
                     bulletX = playerX
@@ -177,7 +177,7 @@ while running:
         # Collision
         collision = isCollision(enemyX[i], enemyY[i], bulletX, bulletY)
         if collision:
-            explosionSound = mixer.Sound("/home/bryan/PycharmProjects/SpaceInvaders/explosion.wav")
+            explosionSound = mixer.Sound("C:/Users/javab/OneDrive/Documents/spaceinvaderstuff/explosion.wav")
             explosionSound.play()
             bulletY = 480
             bullet_state = "ready"
